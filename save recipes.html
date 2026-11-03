@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASIYA-SIYA - Authentic Filipino Recipes</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kalam:wght@700&family=Permanent+Marker&family=Georgia&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Search Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between">
+
+    <div class="wrapper">
+        <!-- Top Navigation Bar Layout -->
+        <header class="top-navbar">
+            <div class="nav-left">
+                <div class="brand-container">
+                    <h1 class="brand-name">KASIYA-SIYA</h1>
+                    <div class="brand-boxes">
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <img src="./image/sun.png" alt="Filipino Sun Graphic" class="sun-graphic">
+
+                <div class="flex items-center gap-1.5 sm:gap-3 z-10">
+                    <!-- Search Container -->
+                    <div class="search-container">
+                        <button class="search-btn" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass text-[10px] sm:text-xs"></i>
+                        </button>
+                        <input type="text" id="recipe-search" class="search-input" placeholder="Search..."
+                            autocomplete="off">
+                    </div>
+
+                    <!-- Login / Logout -->
+                    <div id="auth-header-btn" class="nav-auth-btn">
+                        <button id="open-login-btn" class="auth-trigger-btn">
+                            <i class="fa-solid fa-user text-[10px]"></i>
+                            <span id="user-display-name">LOGIN</span>
+                        </button>
+                        <button id="logout-btn"
+                            class="hidden text-xs text-red-200 hover:underline ml-1 font-bold">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION BAR -->
+        <nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
+            <div class="max-w-7xl mx-auto px-2 sm:px-4">
+                <div class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="home.html">HOME</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="categories.html">CATEGORIES</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer active-nav" href="save recipes.html">SAVE/POST RECIPE</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="about.html">ABOUT US</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+
+        <!-- LEFT COLUMN: Upload Photo & Action Buttons -->
+        <div class="lg:col-span-5 flex flex-col gap-4 animate-slide-left">
+            
+            <!-- Upload Photo Box with Drag and Drop & Live Preview -->
+            <div id="drop-zone" class="upload-dropzone relative w-full h-80 sm:h-96 border-2 border-black rounded-3xl bg-[#717171] flex flex-col items-center justify-center text-[#222222] font-['Georgia'] text-xl sm:text-2xl cursor-pointer overflow-hidden group">
+                <input type="file" id="file-input" class="hidden" accept="image/*">
+                
+                <!-- Initial State UI -->
+                <div id="upload-placeholder" class="flex flex-col items-center justify-center gap-2 p-4 text-center">
+                    <i class="fa-solid fa-cloud-arrow-up text-4xl text-black/70 group-hover:scale-110 transition-transform"></i>
+                    <span id="upload-text" class="font-bold text-black/80">Upload Photo Here</span>
+                    <span class="text-xs text-black/60 italic font-sans">(Click or Drag & Drop Image)</span>
+                </div>
+
+                <!-- Live Preview Image Container -->
+                <img id="image-preview" src="" alt="Recipe Preview" class="hidden absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                
+                <!-- Overlay badge for photo name display if available -->
+                <div id="food-tag-overlay" class="hidden absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-xl border border-white/20 text-center font-marker text-lg truncate">
+                    Untitled Dish
+                </div>
+
+                <!-- Hover overlay when photo exists -->
+                <div id="change-photo-overlay" class="hidden absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-marker text-xl">
+                    <i class="fa-solid fa-pen-to-square mr-2"></i> Change Photo
+                </div>
+            </div>
+
+            <!-- Add Food Name Input/Button -->
+            <div class="w-full relative">
+                <button id="btn-food-name" class="btn-neo w-full bg-[#C5BE53] border-2 border-black rounded-xl py-3 font-['Permanent_Marker'] text-lg sm:text-xl text-black tracking-wide text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-utensils text-base"></i>
+                    <span id="food-name-label">ADD FOOD NAME</span>
+                </button>
+            </div>
+
+            <!-- Save Recipes & Post Buttons Row -->
+            <div class="grid grid-cols-2 gap-4">
+                <button id="btn-save" class="btn-neo bg-[#C5BE53] border-2 border-black rounded-xl py-3 font-['Permanent_Marker'] text-lg sm:text-xl text-black tracking-wide text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bookmark text-base"></i>
+                    <span>SAVE RECIPES</span>
+                </button>
+                <button id="btn-post" class="btn-neo bg-[#C5BE53] border-2 border-black rounded-xl py-3 font-['Permanent_Marker'] text-lg sm:text-xl text-black tracking-wide text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-base"></i>
+                    <span>POST</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Textareas / Input Cards -->
+        <div class="lg:col-span-7 flex flex-col gap-4 animate-slide-right">
+
+            <!-- 1. Cultural Tagging Card -->
+            <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[130px] shadow-sm">
+                <div class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+                    <i class="fa-solid fa-globe text-xs"></i> CULTURAL TAGGING
+                </div>
+                <textarea id="cultural-text" class="w-full h-24 mt-3 bg-transparent border-none outline-none resize-none font-['Georgia'] text-sm sm:text-base text-black placeholder:text-gray-500" placeholder="Type cultural background or tags (e.g., Bicolano Cuisine, Spicy, Traditional)..."></textarea>
+            </div>
+
+            <!-- 2. Add Ingredients Card -->
+            <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+                <div class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+                    <i class="fa-solid fa-carrot text-xs"></i> ADD INGREDIENTS
+                </div>
+                <textarea id="ingredients-text" class="w-full h-32 mt-3 bg-transparent border-none outline-none resize-none font-['Georgia'] text-sm sm:text-base text-black placeholder:text-gray-500" placeholder="List ingredients here (e.g., 1kg Pork Belly, 1/2 Cup Vinegar)..."></textarea>
+            </div>
+
+            <!-- 3. Add Step by Step Card -->
+            <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+                <div class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-xs"></i> ADD STEP BY STEP
+                </div>
+                <textarea id="steps-text" class="w-full h-32 mt-3 bg-transparent border-none outline-none resize-none font-['Georgia'] text-sm sm:text-base text-black placeholder:text-gray-500" placeholder="Write step by step instructions (e.g., 1. Sauté garlic until fragrant)..."></textarea>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Login Modal Overlay -->
+    <div id="login-modal-overlay" class="modal-overlay hidden">
+        <div class="login-card-container">
+            <!-- Close Button -->
+            <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+
+            <!-- Gradient Header Banner -->
+            <div class="login-header-gradient">
+                <h2 id="form-title">Login Form</h2>
+            </div>
+
+            <!-- Form Content -->
+            <div class="login-body">
+                <form id="auth-form">
+                    <div id="signup-extra-fields" class="hidden">
+                        <input type="text" id="full-name-input" class="form-input" placeholder="Full Name"
+                            autocomplete="name">
+                    </div>
+
+                    <input type="email" id="email-input" class="form-input" placeholder="Email Address" required
+                        autocomplete="email">
+                    <input type="password" id="password-input" class="form-input" placeholder="Password" required
+                        autocomplete="current-password">
+
+                    <!-- Login Options (Remember Me & Forgot Password) -->
+                    <div id="login-options" class="options-bar">
+                        <label class="remember-label">
+                            <input type="checkbox" id="remember-me">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link" id="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="gradient-submit-btn">Login</button>
+
+                    <!-- Auth Toggle Switch Link -->
+                    <div class="form-footer-text">
+                        <span id="toggle-prompt">Not a member?</span>
+                        <a href="#" id="toggle-auth-mode" class="signup-link">Signup now</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#C5BE53] py-4 text-center border-t border-black/20">
+        <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
+    </footer>
+
+    <!-- Food Name Modal -->
+    <div id="modal-food-name" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-[#fffef0] border-4 border-black rounded-2xl p-6 max-w-md w-full shadow-[8px_8px_0px_#000] transform transition-all">
+            <h3 class="font-marker text-2xl mb-4 text-black flex items-center gap-2">
+                <i class="fa-solid fa-pen"></i> Enter Food Name
+            </h3>
+            <input type="text" id="food-name-input" class="w-full border-2 border-black rounded-xl p-3 font-['Georgia'] text-lg outline-none focus:ring-2 focus:ring-[#C5BE53] mb-6" placeholder="e.g. Pork Adobo, Sinigang..." autocomplete="off">
+            <div class="flex justify-end gap-3">
+                <button id="modal-cancel" class="btn-neo bg-gray-300 border-2 border-black rounded-xl px-5 py-2 font-marker text-black">CANCEL</button>
+                <button id="modal-save" class="btn-neo bg-[#C5BE53] border-2 border-black rounded-xl px-5 py-2 font-marker text-black">SAVE</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/save-recipes.js"></script>
+<script type="module" src="js/home.js"></script>
+</body>
+</html>

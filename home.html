@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASIYA-SIYA - Authentic Filipino Recipes</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kalam:wght@700&family=Permanent+Marker&family=Georgia&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Search & User Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between">
+
+    <div class="wrapper">
+        <!-- Top Navigation Bar Layout -->
+        <header class="top-navbar">
+            <div class="nav-left">
+                <a href="home.html" class="brand-container">
+                    <h1 class="brand-name">KASIYA-SIYA</h1>
+                    <div class="brand-boxes">
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-right">
+                <img src="./image/sun.png" alt="Filipino Sun Graphic" class="sun-graphic">
+
+                <div class="flex items-center gap-1.5 sm:gap-3 z-10">
+                    <!-- Search Container -->
+                    <div class="search-container">
+                        <button class="search-btn" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass text-[10px] sm:text-xs"></i>
+                        </button>
+                        <input type="text" id="recipe-search" class="search-input" placeholder="Search..."
+                            autocomplete="off">
+                    </div>
+
+                    <!-- Login / Logout -->
+                    <div id="auth-header-btn" class="nav-auth-btn">
+                        <button id="open-login-btn" class="auth-trigger-btn">
+                            <i class="fa-solid fa-user text-[10px]"></i>
+                            <span id="user-display-name">LOGIN</span>
+                        </button>
+                        <button id="logout-btn"
+                            class="hidden text-xs text-red-200 hover:underline ml-1 font-bold">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area Grid -->
+        <main class="main-content">
+            <section class="text-section">
+                <h2 class="welcome-title">WELCOME</h2>
+                <p class="welcome-desc">
+                    Discover delicious Filipino recipes that bring the authentic taste
+                    of the Philippines to your kitchen. Explore, cook, and enjoy your
+                    favorite Filipino dishes with us!<span class="flag-emoji">🇵🇭</span>
+                </p>
+            </section>
+
+            <section class="image-section">
+                <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=1000&q=80"
+                    alt="Filipino Beef Stew" class="food-img">
+            </section>
+        </main>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4">
+            <!-- Replaced overflow-x-auto whitespace-nowrap with responsive flex layout -->
+            <div class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
+                <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer active-nav" href="home.html">HOME</a>
+                <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="categories.html">CATEGORIES</a>
+                <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="save recipes.html">SAVE/POST
+                    RECIPE</a>
+                <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="about.html">ABOUT US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FEATURED RECIPES SECTION -->
+    <main class="flex-grow">
+        <section class="relative bg-[#0F3214] pt-8 pb-12">
+
+            <!-- CENTER BADGE: FEATURED RECIPES -->
+            <div class="flex justify-center mb-8 relative z-20">
+                <div
+                    class="featured-badge px-8 py-2 text-xl sm:text-2xl md:text-3xl tracking-wide shadow-md text-center">
+                    FEATURED RECIPES
+                </div>
+            </div>
+
+            <!-- RECIPE CARDS GRID -->
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-20">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-end">
+
+                    <!-- Dish 1: Pork Adobo -->
+                    <div class="flex flex-col items-center recipe-card">
+                        <a href="./recipes_storage/pork-adobo.html" class="w-full h-48 sm:h-56 flex items-center justify-center p-2 food-img-wrapper mb-3">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80"
+                                alt="Pork Adobo" class="max-h-full max-w-full object-contain rounded-full dish-shadow">
+                        </a>
+                        <a href="./recipes_storage/pork-adobo.html"
+                            class="pill-btn w-full py-2.5 px-4 text-center text-lg sm:text-xl tracking-wider cursor-pointer">
+                            PORK ADOBO
+                        </a>
+                    </div>
+
+                    <!-- Dish 2: Halo-Halo -->
+                    <div class="flex flex-col items-center recipe-card">
+                        <div class="w-full h-48 sm:h-56 flex items-center justify-center p-2 food-img-wrapper mb-3">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80"
+                                alt="Halo-Halo" class="max-h-full max-w-full object-contain rounded-2xl dish-shadow">
+                        </div>
+                        <div
+                            class="pill-btn w-full py-2.5 px-4 text-center text-lg sm:text-xl tracking-wider cursor-pointer">
+                            HALO-HALO
+                        </div>
+                    </div>
+
+                    <!-- Dish 3: Paksiw na Bangus -->
+                    <div class="flex flex-col items-center recipe-card">
+                        <div class="w-full h-48 sm:h-56 flex items-center justify-center p-2 food-img-wrapper mb-3">
+                            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80"
+                                alt="Paksiw na Bangus"
+                                class="max-h-full max-w-full object-contain rounded-full dish-shadow">
+                        </div>
+                        <div
+                            class="pill-btn w-full py-2.5 px-4 text-center text-lg sm:text-xl tracking-wider cursor-pointer">
+                            PAKSIW NA BANGUS
+                        </div>
+                    </div>
+
+                    <!-- Dish 4: Chicken Inasal -->
+                    <div class="flex flex-col items-center recipe-card">
+                        <div class="w-full h-48 sm:h-56 flex items-center justify-center p-2 food-img-wrapper mb-3">
+                            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80"
+                                alt="Chicken Inasal"
+                                class="max-h-full max-w-full object-contain rounded-full dish-shadow">
+                        </div>
+                        <div
+                            class="pill-btn w-full py-2.5 px-4 text-center text-lg sm:text-xl tracking-wider cursor-pointer">
+                            CHICKEN INASAL
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TRANSITION LAYER TO PALE YELLOW BACKGROUND -->
+            <div class="absolute bottom-0 left-0 w-full h-20 bg-[#FEF0B5] z-0"></div>
+
+        </section>
+
+        <!-- LOWER CREAM SECTION SPACING -->
+        <div class="bg-[#FEF0B5] py-8 border-b-2 border-black/10"></div>
+    </main>
+
+    <!-- LOGIN / SIGNUP MODAL OVERLAY -->
+    <div id="login-modal-overlay" class="modal-overlay hidden">
+            <div class="login-card-container">
+                <!-- Close Button -->
+                <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+
+                <!-- Gradient Header Banner -->
+                <div class="login-header-gradient">
+                    <h2 id="form-title">Login Form</h2>
+                </div>
+
+                <!-- Form Content -->
+                <div class="login-body">
+                    <form id="auth-form">
+                        <div id="signup-extra-fields" class="hidden">
+                            <input type="text" id="full-name-input" class="form-input" placeholder="Full Name"
+                                autocomplete="name">
+                        </div>
+
+                        <input type="email" id="email-input" class="form-input" placeholder="Email Address" required
+                            autocomplete="email">
+                        <input type="password" id="password-input" class="form-input" placeholder="Password" required
+                            autocomplete="current-password">
+
+                        <!-- Login Options (Remember Me & Forgot Password) -->
+                        <div id="login-options" class="options-bar">
+                            <label class="remember-label">
+                                <input type="checkbox" id="remember-me">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link" id="forgot-password">Forgot password?</a>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="gradient-submit-btn">Login</button>
+
+                        <!-- Auth Toggle Switch Link -->
+                        <div class="form-footer-text">
+                            <span id="toggle-prompt">Not a member?</span>
+                            <a href="#" id="toggle-auth-mode" class="signup-link">Signup now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#C5BE53] py-4 text-center border-t border-black/20">
+        <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script type="module" src="js/home.js"></script>
+    
+</body>
+</html>
