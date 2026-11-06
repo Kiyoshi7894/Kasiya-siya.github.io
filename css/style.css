@@ -175,7 +175,6 @@ nav div {
 .sun-graphic:hover {
   animation: slow-rotate 20s linear infinite;
 }
-.
 
 @keyframes slow-rotate {
   from {
@@ -906,7 +905,7 @@ nav div {
   .search-input {
     font-size: 11px;
   }
-  
+
   .auth-trigger-btn {
   background-color: var(--bg-cream);
   color: #111111;
@@ -938,17 +937,4 @@ nav div {
   .nav-right {
     padding-right: 10px !important;
   }
-}
-/* Heart Pulse Effect */
-.heart-btn {
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.heart-btn.active {
-  color: #e63946;
-  animation: heartPulse 0.4s ease-in-out;
-}
-@keyframes heartPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.35); }
-  100% { transform: scale(1); }
 }
