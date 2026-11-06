@@ -83,3 +83,18 @@ function updateTotalStars(scores) {
         }
     });
 }
+const btnFavorite = document.getElementById('btn-favorite');
+
+btnFavorite.addEventListener('click', () => {
+    btnFavorite.classList.toggle('active');
+    const icon = btnFavorite.querySelector('i');
+    if (btnFavorite.classList.contains('active')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid');
+        showToast('Added to Favorites!', 'fa-heart');
+    } else {
+        icon.classList.remove('fa-solid');
+        icon.classList.add('fa-regular');
+        showToast('Removed from Favorites.', 'fa-heart');
+    }
+});
