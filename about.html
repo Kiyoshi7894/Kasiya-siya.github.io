@@ -6,7 +6,7 @@
     <title>KASIYA-SIYA - Authentic Filipino Recipes</title>
     
     <!-- Google Fonts -->
-    <link rel="preconnec    t" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kalam:wght@700&family=Permanent+Marker&family=Georgia&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
@@ -14,6 +14,22 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Flip Card Utility Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
@@ -60,157 +76,196 @@
         </header>
 
         <!-- NAVIGATION BAR -->
-<nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
-    <div class="max-w-7xl mx-auto px-2 sm:px-4">
-        <!-- Replaced overflow-x-auto whitespace-nowrap with responsive flex layout -->
-        <div class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
-            <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="home.html">HOME</a>
-            <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="categories.html">CATEGORIES</a>
-            <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="save recipes.html">SAVE/POST RECIPE</a>
-            <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer active-nav" href="about.html">ABOUT US</a>
-        </div>
-    </div>
-</nav>
+        <nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
+            <div class="max-w-7xl mx-auto px-2 sm:px-4">
+                <div class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="home.html">HOME</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="categories.html">CATEGORIES</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="save recipes.html">SAVE/POST RECIPE</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer active-nav" href="about.html">ABOUT US</a>
+                </div>
+            </div>
+        </nav>
 
         <!-- MAIN ABOUT US / THE TEAM CONTENT -->
         <main class="bg-[#FEF0B5] py-12 px-4 sm:px-6 lg:px-8 flex-grow flex flex-col justify-center">
             
             <!-- SECTION BADGE: THE TEAM -->
-            <div class="flex justify-center mb-10">
+            <div class="flex justify-center mb-4">
                 <div class="team-badge px-10 py-2 text-2xl sm:text-3xl font-marker border-2 border-black rounded-full tracking-wider">
                     THE TEAM
                 </div>
             </div>
+            <p class="text-center font-marker text-sm sm:text-base text-black/70 mb-10">Click any card to flip and view team roles & contributions!</p>
 
             <!-- TEAM MEMBERS CARDS GRID -->
             <div class="max-w-6xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
                 
-                <!-- MEMBER 1: -->
-                <div class="team-card bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center">
-                    <div class="member-img-wrapper w-full h-36 rounded-2xl overflow-hidden border border-black/20 mb-3">
-                        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80" alt="Leader" class="member-img w-full h-full object-cover">
-                    </div>
-                    
-                    <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
-                        James M. Dungo
-                    </div>
-
-                    <div class="details-box border-2 border-black p-3 w-full bg-white flex-grow">
-                        <ul class="list-disc list-inside font-marker text-sm sm:text-base space-y-1">
-                            <li>website designer</li>
-                            <li>programmer</li>
-                            <li>documentation</li>
-                            <li>project analysis</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- MEMBER 2: -->
-                <div class="team-card bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center">
-                    <div class="member-img-wrapper w-full h-36 rounded-2xl overflow-hidden border border-black/20 mb-3">
-                        <img src="image\ai.png" alt="Programmer" class="member-img w-full h-full object-cover">
-                    </div>
-                    
-                    <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
-                        Andrei S. Santos
-                    </div>
-
-                    <div class="details-box border-2 border-black p-3 w-full bg-white flex-grow">
-                        <ul class="list-disc list-inside font-marker text-sm sm:text-base space-y-1">
-                            <li>website designer</li>
-                            <li>programmer</li>
-                            <li>documentation</li>
-                            <li>project analysis</li>
-                        </ul>
+                <!-- MEMBER 1: James M. Dungo -->
+                <div class="perspective-1000 h-[380px] cursor-pointer group" onclick="this.querySelector('.card-inner').classList.toggle('rotate-y-180')">
+                    <div class="card-inner relative w-full h-full duration-500 transform-style-3d shadow-md rounded-3xl">
+                        <!-- Front Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center backface-hidden">
+                            <div class="member-img-wrapper w-full h-70 rounded-2xl overflow-hidden border border-black/20 mb-3">
+                                <img src="./image/James.jpg" alt="James M. Dungo" class="member-img w-full h-full object-cover">
+                            </div>
+                            <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
+                                James M. Dungo
+                            </div>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#0f3214] text-[#FEF0B5] border-2 border-black rounded-3xl overflow-hidden p-5 flex flex-col justify-between backface-hidden rotate-y-180">
+                            <div>
+                                <p class="text-xs font-marker tracking-widest text-[#C5BE53] mb-1">CONTRIBUTION</p>
+                                <h3 class="font-marker text-xl mb-3 text-white">James M. Dungo</h3>
+                                <p class="text-sm font-serif mb-4">Focuses on technical structure, clean layout execution, and overall system implementation.</p>
+                                <ul class="list-disc list-inside font-marker text-xs space-y-1 text-white/90">
+                                    <li>UI Layout & Styling</li>
+                                    <li>Core Logic Integration</li>
+                                    <li>Report Writing</li>
+                                </ul>
+                            </div>
+                            <div class="text-center text-xs font-marker text-[#C5BE53] underline pb-1">Click to flip back</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- MEMBER 3: -->
-                <div class="team-card bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center">
-                    <div class="member-img-wrapper w-full h-36 rounded-2xl overflow-hidden border border-black/20 mb-3">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Moral Support" class="member-img w-full h-full object-cover">
-                    </div>
-                    
-                    <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
-                        Shara Joy S. Fernando
-                    </div>
-
-                    <div class="details-box border-2 border-black p-3 w-full bg-white flex-grow">
-                        <ul class="list-disc list-inside font-marker text-sm sm:text-base space-y-1">
-                            <li>website designer</li>
-                            <li>programmer</li>
-                            <li>documentation</li>
-                            <li>project analysis</li>
-                        </ul>
+                <!-- MEMBER 2: Andrei S. Santos -->
+                <div class="perspective-1000 h-[380px] cursor-pointer group" onclick="this.querySelector('.card-inner').classList.toggle('rotate-y-180')">
+                    <div class="card-inner relative w-full h-full duration-500 transform-style-3d shadow-md rounded-3xl">
+                        <!-- Front Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center backface-hidden">
+                            <div class="member-img-wrapper w-full h-70 rounded-2xl overflow-hidden border border-black/20 mb-3">
+                                <img src="./image/jc.jpg" alt="Andrei S. Santos" class="member-img w-full h-full object-cover">
+                            </div>
+                            <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
+                                Andrei S. Santos
+                            </div>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#0f3214] text-[#FEF0B5] border-2 border-black rounded-3xl overflow-hidden p-5 flex flex-col justify-between backface-hidden rotate-y-180">
+                            <div>
+                                <p class="text-xs font-marker tracking-widest text-[#C5BE53] mb-1">CONTRIBUTION</p>
+                                <h3 class="font-marker text-xl mb-3 text-white">Andrei S. Santos</h3>
+                                <p class="text-sm font-serif mb-4">Handles functional programming elements, backend scripts, and application logic.</p>
+                                <ul class="list-disc list-inside font-marker text-xs space-y-1 text-white/90">
+                                    <li>Interactive Modules</li>
+                                    <li>App Architecture</li>
+                                    <li>Data Flow Analysis</li>
+                                </ul>
+                            </div>
+                            <div class="text-center text-xs font-marker text-[#C5BE53] underline pb-1">Click to flip back</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- MEMBER 4: -->
-                <div class="team-card bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center">
-                    <div class="member-img-wrapper w-full h-36 rounded-2xl overflow-hidden border border-black/20 mb-3">
-                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80" alt="Pansit" class="member-img w-full h-full object-cover">
+                <!-- MEMBER 3: Shara Joy S. Fernando -->
+                <div class="perspective-1000 h-[380px] cursor-pointer group" onclick="this.querySelector('.card-inner').classList.toggle('rotate-y-180')">
+                    <div class="card-inner relative w-full h-full duration-500 transform-style-3d shadow-md rounded-3xl">
+                        <!-- Front Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center backface-hidden">
+                            <div class="member-img-wrapper w-full h-70 rounded-2xl overflow-hidden border border-black/20 mb-3">
+                                <img src="./image/Shara.jpg" alt="Shara Joy S. Fernando" class="member-img w-full h-full object-cover">
+                            </div>
+                            <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xm w-full mb-2 bg-white">
+                                Shara Joy S. Fernando
+                            </div>
+    
+                        </div>
+                        <!-- Back Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#0f3214] text-[#FEF0B5] border-2 border-black rounded-3xl overflow-hidden p-5 flex flex-col justify-between backface-hidden rotate-y-180">
+                            <div>
+                                <p class="text-xs font-marker tracking-widest text-[#C5BE53] mb-1">CONTRIBUTION</p>
+                                <h3 class="font-marker text-xl mb-3 text-white">Shara Joy S. Fernando</h3>
+                                <p class="text-sm font-serif mb-4">Directs project documentation rigor, specifications gathering, and visual coherence.</p>
+                                <ul class="list-disc list-inside font-marker text-xs space-y-1 text-white/90">
+                                    <li>Technical Writing</li>
+                                    <li>System Requirements</li>
+                                    <li>Layout Aesthetics</li>
+                                </ul>
+                            </div>
+                            <div class="text-center text-xs font-marker text-[#C5BE53] underline pb-1">Click to flip back</div>
+                        </div>
                     </div>
-                    
-                    <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
-                        Collene B. Figueroa
-                    </div>
+                </div>
 
-                    <div class="details-box border-2 border-black p-3 w-full bg-white flex-grow">
-                        <ul class="list-disc list-inside font-marker text-sm sm:text-base space-y-1">
-                            <li>website designer</li>
-                            <li>programmer</li>
-                            <li>documentation</li>
-                            <li>project analysis</li>
-                        </ul>
+                <!-- MEMBER 4: Collene B. Figueroa -->
+                <div class="perspective-1000 h-[380px] cursor-pointer group" onclick="this.querySelector('.card-inner').classList.toggle('rotate-y-180')">
+                    <div class="card-inner relative w-full h-full duration-500 transform-style-3d shadow-md rounded-3xl">
+                        <!-- Front Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#FFFDD0] border-2 border-black rounded-3xl overflow-hidden p-3 flex flex-col items-center backface-hidden">
+                            <div class="member-img-wrapper w-full h-70 rounded-2xl overflow-hidden border border-black/20 mb-3">
+                                <img src="./image/Collene.jpg" alt="Collene B. Figueroa" class="member-img w-full h-full object-cover">
+                            </div>
+                            <div class="role-box border-2 border-black px-4 py-1 text-center font-marker text-lg sm:text-xl w-full mb-2 bg-white">
+                                Collene B. Figueroa
+                            </div>
+                        </div>
+                        <!-- Back Face -->
+                        <div class="absolute inset-0 w-full h-full bg-[#0f3214] text-[#FEF0B5] border-2 border-black rounded-3xl overflow-hidden p-5 flex flex-col justify-between backface-hidden rotate-y-180">
+                            <div>
+                                <p class="text-xs font-marker tracking-widest text-[#C5BE53] mb-1">CONTRIBUTION</p>
+                                <h3 class="font-marker text-xl mb-3 text-white">Collene B. Figueroa</h3>
+                                <p class="text-sm font-serif mb-4">Conducts project research, feasibility studies, and user workflow analysis.</p>
+                                <ul class="list-disc list-inside font-marker text-xs space-y-1 text-white/90">
+                                    <li>Workflow Research</li>
+                                    <li>Process Analysis</li>
+                                    <li>Quality Control</li>
+                                </ul>
+                            </div>
+                            <div class="text-center text-xs font-marker text-[#C5BE53] underline pb-1">Click to flip back</div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </main>
-<div id="login-modal-overlay" class="modal-overlay hidden">
-        <div class="login-card-container">
-            <!-- Close Button -->
-            <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
 
-            <!-- Gradient Header Banner -->
-            <div class="login-header-gradient">
-                <h2 id="form-title">Login Form</h2>
-            </div>
+        <div id="login-modal-overlay" class="modal-overlay hidden">
+            <div class="login-card-container">
+                <!-- Close Button -->
+                <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
 
-            <!-- Form Content -->
-            <div class="login-body">
-                <form id="auth-form">
-                    <div id="signup-extra-fields" class="hidden">
-                        <input type="text" id="full-name-input" class="form-input" placeholder="Full Name"
-                            autocomplete="name">
-                    </div>
+                <!-- Gradient Header Banner -->
+                <div class="login-header-gradient">
+                    <h2 id="form-title">Login Form</h2>
+                </div>
 
-                    <input type="email" id="email-input" class="form-input" placeholder="Email Address" required
-                        autocomplete="email">
-                    <input type="password" id="password-input" class="form-input" placeholder="Password" required
-                        autocomplete="current-password">
+                <!-- Form Content -->
+                <div class="login-body">
+                    <form id="auth-form">
+                        <div id="signup-extra-fields" class="hidden">
+                            <input type="text" id="full-name-input" class="form-input" placeholder="Full Name"
+                                autocomplete="name">
+                        </div>
 
-                    <!-- Login Options (Remember Me & Forgot Password) -->
-                    <div id="login-options" class="options-bar">
-                        <label class="remember-label">
-                            <input type="checkbox" id="remember-me">
-                            <span>Remember me</span>
-                        </label>
-                        <a href="#" class="forgot-link" id="forgot-password">Forgot password?</a>
-                    </div>
+                        <input type="email" id="email-input" class="form-input" placeholder="Email Address" required
+                            autocomplete="email">
+                        <input type="password" id="password-input" class="form-input" placeholder="Password" required
+                            autocomplete="current-password">
 
-                    <!-- Submit Button -->
-                    <button type="submit" id="submit-btn" class="gradient-submit-btn">Login</button>
+                        <!-- Login Options (Remember Me & Forgot Password) -->
+                        <div id="login-options" class="options-bar">
+                            <label class="remember-label">
+                                <input type="checkbox" id="remember-me">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link" id="forgot-password">Forgot password?</a>
+                        </div>
 
-                    <!-- Auth Toggle Switch Link -->
-                    <div class="form-footer-text">
-                        <span id="toggle-prompt">Not a member?</span>
-                        <a href="#" id="toggle-auth-mode" class="signup-link">Signup now</a>
-                    </div>
-                </form>
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="gradient-submit-btn">Login</button>
+
+                        <!-- Auth Toggle Switch Link -->
+                        <div class="form-footer-text">
+                            <span id="toggle-prompt">Not a member?</span>
+                            <a href="#" id="toggle-auth-mode" class="signup-link">Signup now</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+
         <footer class="bg-[#C5BE53] py-4 text-center border-t border-black/20">
             <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
         </footer>
@@ -222,5 +277,5 @@
         initAuth();
     });
 </script>
-    <script type="module" src="js/home.js"></script>
+<script type="module" src="js/home.js"></script>
 </html>
