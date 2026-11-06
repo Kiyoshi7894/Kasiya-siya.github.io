@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KASIYA-SIYA - Pancit Guisado</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kalam:wght@700&family=Permanent+Marker&family=Georgia&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'marker': ['"Permanent Marker"', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between bg-[#F7F2B7]">
+
+  <div class="wrapper">
+    <!-- TOP NAVIGATION BAR -->
+    <header class="top-navbar">
+      <div class="nav-left">
+        <div class="brand-container">
+          <h1 class="brand-name">KASIYA-SIYA</h1>
+          <div class="brand-boxes">
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <img src="../../image/sun.png" alt="Filipino Sun Graphic" class="sun-graphic">
+
+        <div class="flex items-center gap-1.5 sm:gap-3 z-10">
+          <!-- Search Container -->
+          <div class="search-container">
+            <button class="search-btn" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass text-[10px] sm:text-xs"></i>
+            </button>
+            <input type="text" id="recipe-search" class="search-input" placeholder="Search..."
+              autocomplete="off">
+          </div>
+
+          <!-- Login / Logout -->
+          <div id="auth-header-btn" class="nav-auth-btn">
+            <button id="open-login-btn" class="auth-trigger-btn">
+              <i class="fa-solid fa-user text-[10px]"></i>
+              <span id="user-display-name">LOGIN</span>
+            </button>
+            <button id="logout-btn"
+              class="hidden text-xs text-red-200 hover:underline ml-1 font-bold">Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4">
+        <div
+          class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
+          <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../home.html">HOME</a>
+          <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../categories.html">CATEGORIES</a>
+          <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../save recipes.html">SAVE/POST RECIPE</a>
+          <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../about.html">ABOUT US</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+
+    <!-- LEFT COLUMN: Image & Action Badges -->
+    <div class="lg:col-span-5 flex flex-col gap-4">
+
+      <!-- Recipe Image Display Container -->
+      <div
+        class="relative w-full h-80 sm:h-96 border-2 border-black rounded-3xl bg-black flex flex-col items-center justify-center overflow-hidden shadow-sm">
+        <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=1000&auto=format&fit=crop"
+          alt="Pancit Guisado" class="w-full h-full object-cover"
+          onerror="this.src='https://placehold.co/600x400/8B4513/FFF?text=Pancit+Guisado'">
+      </div>
+
+      <!-- Dish Name Button/Badge -->
+      <div class="w-full relative">
+        <div
+          class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-3 font-['Permanent_Marker'] text-lg sm:text-xl text-black tracking-wide text-center uppercase shadow-sm">
+          PANCIT GUISADO
+        </div>
+      </div>
+
+      <!-- Action Controls Row: Heart Toggle & Reviews Button -->
+      <div class="grid grid-cols-12 gap-3 items-center">
+        <div class="col-span-2 flex justify-center">
+          <button id="heartBtn" onclick="toggleHeart()"
+            class="bg-transparent border-none p-1 focus:outline-none transform hover:scale-110 transition-transform">
+            <svg id="heartIcon" class="w-9 h-9 text-red-500 fill-none stroke-current stroke-[2]"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </button>
+        </div>
+        <div class="col-span-10">
+          <button onclick="openReviewModal()"
+            class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-3 font-['Permanent_Marker'] text-lg sm:text-xl text-black tracking-wide text-center uppercase shadow-sm hover:bg-[#b2aa45] transition-colors">
+            REVIEWS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Content Cards -->
+    <div class="lg:col-span-7 flex flex-col gap-4">
+
+      <!-- 1. Cultural Tagging / Description Card -->
+      <div
+        class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[130px] shadow-sm">
+        <div
+          class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-globe text-xs"></i> Philippines
+        </div>
+        <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed uppercase">
+- PANCIT GUISADO IS A TRADITIONAL FILIPINO STIR-FRIED NOODLE DISH INFLUENCED BY CHINESE CULINARY HERITAGE. IT COMBINES RICE VERMICELLI (BIHON) AND YELLOW WHEAT NOODLES (CANTON) SAUTÉED WITH GARLIC, ONIONS, MEAT, SHRIMP, AND FRESH VEGETABLES. IT IS A CELEBRATORY STAPLE SERVED AT BIRTHDAYS AND SPECIAL GATHERINGS TO SYMBOLIZE LONG LIFE AND HEALTH.
+        </div>
+      </div>
+
+      <!-- 2. Ingredients Card -->
+      <div
+        class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+        <div
+          class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-carrot text-xs"></i> INGREDIENTS
+        </div>
+        <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed">
+          <p class="font-bold uppercase mb-1">• PANCIT GUISADO INGREDIENTS</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pl-2 uppercase">
+            <ul class="list-disc list-inside space-y-1">
+              <li>8 OZ. PANIT BIHON (RICE VERMICELLI)</li>
+              <li>8 OZ. PANCIT CANTON NOODLES</li>
+              <li>½ LB. PORK BELLY, SLICED THINLY</li>
+              <li>½ LB. PEELED AND DEVEINED SHRIMP</li>
+              <li>1 CUP SHREDDED CHICKEN (BOILED)</li>
+              <li>4 CLOVES GARLIC, MINCED</li>
+              <li>1 MEDIUM ONION, SLICED</li>
+            </ul>
+            <ul class="list-disc list-inside space-y-1">
+              <li>2 TABLESPOONS SOY SAUCE</li>
+              <li>4 CUPS CHICKEN BROTH OR WATER</li>
+              <li>1 CUP CARROTS, JULIENNED</li>
+              <li>2 CUPS CABBAGE, SHREDDED</li>
+              <li>1 CUP SNOW PEAS (SITSARO)</li>
+              <li>COOKING OIL, SALT, AND PEPPER TO TASTE</li>
+              <li>CALAMANSI WEDGES FOR SERVING</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Step by Step Instructions Card -->
+      <div
+        class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+        <div
+          class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+          <i class="fa-solid fa-list-check text-xs"></i> STEP BY STEP
+        </div>
+        <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed uppercase">
+          <ul class="list-disc list-inside space-y-1">
+            <li>SOAK THE BIHON NOODLES IN WATER FOR A FEW MINUTES UNTIL SOFTENED, THEN DRAIN.</li>
+            <li>HEAT COOKING OIL IN A LARGE WOK OR PAN. SAUTÉ GARLIC AND ONIONS UNTIL FRAGRANT.</li>
+            <li>ADD THE PORK BELLY SLICES AND COOK UNTIL LIGHTLY BROWNED.</li>
+            <li>ADD THE SHRIMP AND SHREDDED CHICKEN, COOKING FOR 2 MINUTES, THEN SEASON WITH SOY SAUCE AND PEPPER.</li>
+            <li>TOSS IN THE VEGETABLES (CARROTS, CABBAGE, AND SNOW PEAS), STIR BRIEFLY, AND REMOVE THE VEGETABLES FROM THE PAN TO KEEP THEM CRISP.</li>
+            <li>POUR THE CHICKEN BROTH INTO THE PAN AND BRING TO A BOIL.</li>
+            <li>ADD THE PANCIT CANTON AND SOFTENED BIHON NOODLES INTO THE BROTH, STIRRING UNTIL THE LIQUID IS ABSORBED AND NOODLES ARE COOKED.</li>
+            <li>RETURN THE SAUTÉED VEGETABLES BACK ON TOP, MIX THOROUGHLY, SERVE WARM WITH CALAMANSI WEDGES, AND ENJOY!</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Description Rating Header -->
+      <div
+        class="border-2 border-black rounded-2xl bg-[#FFFDD0] p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div
+          class="bg-[#C5BE53] border-2 border-black px-6 py-2 rounded-xl font-marker text-xl text-black tracking-wide">
+          DESCRIPTION
+        </div>
+        <!-- Star Rating Display -->
+        <div class="flex gap-2 text-3xl text-yellow-500">
+          <i class="fa-solid fa-star drop-shadow-sm"></i>
+          <i class="fa-solid fa-star drop-shadow-sm"></i>
+          <i class="fa-solid fa-star drop-shadow-sm"></i>
+          <i class="fa-solid fa-star drop-shadow-sm"></i>
+          <i class="fa-solid fa-star drop-shadow-sm"></i>
+        </div>
+      </div>
+
+      <!-- 2. User Reviews Card -->
+      <div class="border-2 border-black rounded-2xl bg-[#FFFDD0] p-5 relative shadow-sm">
+        <div
+          class="absolute -top-3 left-6 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-xl font-marker text-base sm:text-lg text-black">
+          USER REVIEWS
+        </div>
+        <div class="mt-4 font-marker text-sm sm:text-base text-black space-y-2 leading-relaxed">
+          <div class="flex justify-between items-center border-b border-black/10 pb-1">
+            <span>• ARVIN JOSH TABINAS</span>
+            <span class="text-yellow-600">★★★★★ 5/5</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-black/10 pb-1">
+            <span>• ANDREI SANTOS</span>
+            <span class="text-yellow-600">★★★★★ 5/5</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-black/10 pb-1">
+            <span>• JOHN NATHANIEL</span>
+            <span class="text-yellow-600">★★★★★ 5/5</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span>• JOHN CARLO CRUZ</span>
+            <span class="text-yellow-600">★★★★★ 5/5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Comment Card -->
+      <div class="border-2 border-black rounded-2xl bg-[#FFFDD0] p-5 relative shadow-sm">
+        <div
+          class="absolute -top-3 left-6 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-xl font-marker text-base sm:text-lg text-black">
+          COMMENT
+        </div>
+        <div class="mt-4 font-marker text-xs sm:text-sm text-black space-y-2 leading-relaxed uppercase">
+          <p class="font-bold">• ARVIN JOSH TABINAS</p>
+          <p class="pl-4 text-black/90 font-['Georgia'] tracking-normal lowercase text-sm sm:text-base">
+- "Kumpleto sa sahog at sakto ang lambot ng noodles! Ang sarap lagyan ng calamansi at patis. Hindi kumpleto ang handaan sa birthday kapag walang ganitong pancit guisado. Solid!"
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- LOGIN MODAL OVERLAY -->
+  <div id="login-modal-overlay" class="modal-overlay hidden">
+    <div class="login-card-container">
+      <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="login-header-gradient">
+        <h2 id="form-title">Login Form</h2>
+      </div>
+      <div class="login-body">
+        <form id="auth-form">
+          <div id="signup-extra-fields" class="hidden">
+            <input type="text" id="full-name-input" class="form-input" placeholder="Full Name" autocomplete="name">
+          </div>
+          <input type="email" id="email-input" class="form-input" placeholder="Email Address" required autocomplete="email">
+          <input type="password" id="password-input" class="form-input" placeholder="Password" required autocomplete="current-password">
+          <div id="login-options" class="options-bar">
+            <label class="remember-label">
+              <input type="checkbox" id="remember-me">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link" id="forgot-password">Forgot password?</a>
+          </div>
+          <button type="submit" id="submit-btn" class="gradient-submit-btn">Login</button>
+          <div class="form-footer-text">
+            <span id="toggle-prompt">Not a member?</span>
+            <a href="#" id="toggle-auth-mode" class="signup-link">Signup now</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEW MODAL OVERLAY -->
+  <div id="review-modal-overlay" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
+    <div class="bg-[#F7F2B7] border-2 border-black rounded-3xl p-6 max-w-2xl w-full relative shadow-xl max-h-[90vh] overflow-y-auto">
+      <button onclick="closeReviewModal()" class="absolute top-4 right-4 text-black font-bold text-xl hover:text-red-600">&times;</button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-4">
+          <div class="relative w-full h-48 border-2 border-black rounded-2xl bg-black overflow-hidden shadow-sm">
+            <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=1000&auto=format&fit=crop"
+              alt="Pancit Guisado" class="w-full h-full object-cover">
+          </div>
+         
+          <div class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-2 font-['Permanent_Marker'] text-base text-black text-center uppercase shadow-sm">
+            PANCIT GUISADO
+          </div>
+
+          <div class="flex flex-col">
+            <div class="bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-t-xl font-['Permanent_Marker'] text-sm text-black inline-block w-fit">
+              COMMENT:
+            </div>
+            <textarea id="review-comment" class="w-full h-32 bg-[#C5BE53] border-2 border-t-0 border-black rounded-b-xl p-3 font-['Permanent_Marker'] text-sm text-black focus:outline-none resize-none uppercase" placeholder="Write your comment here..."></textarea>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-between gap-3 font-['Permanent_Marker'] text-xs text-black">
+          <div class="flex flex-col gap-1">
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU RATE THE TASTE OF THE DISH?</div>
+            <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+              <span class="text-[10px]">VERY POOR</span>
+              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="taste">
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+              </div>
+              <span class="text-[10px]">EXCELLENT</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU RATE THE APPEARANCE/PRESENTATION?</div>
+            <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+              <span class="text-[10px]">VERY POOR</span>
+              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="appearance">
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+              </div>
+              <span class="text-[10px]">EXCELLENT</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW EASY WAS THE RECIPE TO FOLLOW?</div>
+            <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+              <span class="text-[10px]">VERY POOR</span>
+              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="ease">
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+              </div>
+              <span class="text-[10px]">EXCELLENT</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW SATISFIED ARE YOU WITH THE INGREDIENTS?</div>
+            <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+              <span class="text-[10px]">VERY POOR</span>
+              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="ingredients">
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+              </div>
+              <span class="text-[10px]">EXCELLENT</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW LIKELY ARE YOU TO MAKE THIS RECIPE AGAIN?</div>
+            <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+              <span class="text-[10px]">VERY POOR</span>
+              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="repeat">
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+              </div>
+              <span class="text-[10px]">EXCELLENT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-4 border-t-2 border-black/20">
+        <div class="flex items-center gap-3 bg-[#C5BE53] border-2 border-black px-4 py-2 rounded-xl font-['Permanent_Marker'] text-sm text-black">
+          <span>TOTAL</span>
+          <div id="total-stars" class="flex gap-1 text-xl text-yellow-500">
+            <i class="fa-regular fa-star text-black/60"></i>
+            <i class="fa-regular fa-star text-black/60"></i>
+            <i class="fa-regular fa-star text-black/60"></i>
+            <i class="fa-regular fa-star text-black/60"></i>
+            <i class="fa-regular fa-star text-black/60"></i>
+          </div>
+        </div>
+        <button id="post-review-btn" class="w-full sm:w-auto bg-[#C5BE53] hover:bg-[#b2aa45] border-2 border-red-500 text-black px-8 py-2 rounded-xl font-['Permanent_Marker'] text-base tracking-wide shadow-sm transition-colors">
+          POST REVIEW
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#C5BE53] py-4 text-center border-t border-black/20">
+    <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
+  </footer>
+
+  <script type="module">
+    import { initAuth } from "../../js/auth.js";
+    document.addEventListener("DOMContentLoaded", () => {
+      initAuth();
+    });
+  </script>
+  <script src="../../js/home.js"></script>
+  <script src="../../js/review.js"></script>
+</body>
+
+</html>
