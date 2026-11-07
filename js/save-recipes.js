@@ -1,11 +1,5 @@
 // JS/save-recipes.js
-import { initAuth } from "./auth.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Initialize Authentication & Login Module
-    initAuth();
-
-    // --- DOM Elements ---
     const dropZone = document.getElementById("drop-zone");
     const fileInput = document.getElementById("file-input");
     const uploadPlaceholder = document.getElementById("upload-placeholder");
@@ -156,47 +150,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- SAVE RECIPES BUTTON ACTION (EXPORT AS HTML FILE) ---
-if (btnSave) {
-    btnSave.addEventListener("click", async () => {
-        const recipePayload = {
-            foodName: currentFoodName || "Untitled Dish",
-            image: currentImageData || "",
-            cultural: culturalText ? culturalText.value.trim() : "",
-            ingredients: ingredientsText ? ingredientsText.value.trim() : "",
-            steps: stepsText ? stepsText.value.trim() : ""
-        };
+    if (btnSave) {
+        btnSave.addEventListener("click", async () => {
+            const recipePayload = {
+                foodName: currentFoodName || "Untitled Dish",
+                image: currentImageData || "",
+                cultural: culturalText ? culturalText.value.trim() : "",
+                ingredients: ingredientsText ? ingredientsText.value.trim() : "",
+                steps: stepsText ? stepsText.value.trim() : ""
+            };
 
-        if (!recipePayload.ingredients && !recipePayload.steps) {
-            showToast("Please add at least ingredients or steps before saving.", true);
-            return;
-        }
-
-        try {
-            const response = await fetch("http://localhost:3000/api/save-recipe", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(recipePayload)
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                showToast(`Saved to server folder: ${result.fileName}`);
-            } else {
-                showToast(result.message || "Failed to save recipe.", true);
+            if (!recipePayload.ingredients && !recipePayload.steps) {
+                showToast("Please add at least ingredients or steps before saving.", true);
+                return;
             }
-        } catch (error) {
-            console.error("Backend Error:", error);
-            showToast("Unable to connect to backend server.", true);
-        }
-    });
-}
+
+            try {
+                const response = await fetch("http://localhost:3000/api/save-recipe", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(recipePayload)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showToast(`Saved to server folder: ${result.fileName}`);
+                } else {
+                    showToast(result.message || "Failed to save recipe.", true);
+                }
+            } catch (error) {
+                console.error("Backend Error:", error);
+                showToast("Unable to connect to backend server.", true);
+            }
+        });
+    }
 
     // --- POST BUTTON ACTION ---
     if (btnPost) {
         btnPost.addEventListener("click", () => {
+            // Check if user is logged in
+            const userDisplay = document.getElementById('user-display-name');
+            const userName = userDisplay ? userDisplay.innerText.trim() : 'LOGIN';
+
+            if (!userName || userName === 'LOGIN') {
+                showToast("You must be logged in to post a recipe!", true);
+                
+                // Automatically open the login modal
+                const loginModal = document.getElementById('login-modal-overlay');
+                if (loginModal) loginModal.classList.remove('hidden');
+                return;
+            }
+
             const recipe = getRecipePayload();
 
             if (!recipe.foodName || recipe.foodName === "Untitled Dish") {
@@ -229,4 +236,3 @@ if (btnSave) {
             }, 1000);
         });
     }
-});
