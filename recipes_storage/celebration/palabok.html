@@ -37,15 +37,15 @@
     <header class="top-navbar">
       <div class="nav-left">
         <a href="../../home.html" class="brand-container">
-                    <h1 class="brand-name">KASIYA-SIYA</h1>
-                    <div class="brand-boxes">
-                        <div class="square-box"></div>
-                        <div class="square-box"></div>
-                        <div class="square-box"></div>
-                        <div class="square-box"></div>
-                        <div class="square-box"></div>
-                    </div>
-                </a>
+          <h1 class="brand-name">KASIYA-SIYA</h1>
+          <div class="brand-boxes">
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+            <div class="square-box"></div>
+          </div>
+        </a>
       </div>
 
       <div class="nav-right">
@@ -57,8 +57,7 @@
             <button class="search-btn" aria-label="Search">
               <i class="fa-solid fa-magnifying-glass text-[10px] sm:text-xs"></i>
             </button>
-            <input type="text" id="recipe-search" class="search-input" placeholder="Search..."
-              autocomplete="off">
+            <input type="text" id="recipe-search" class="search-input" placeholder="Search..." autocomplete="off">
           </div>
 
           <!-- Login / Logout -->
@@ -67,8 +66,7 @@
               <i class="fa-solid fa-user text-[10px]"></i>
               <span id="user-display-name">LOGIN</span>
             </button>
-            <button id="logout-btn"
-              class="hidden text-xs text-red-200 hover:underline ml-1 font-bold">Logout</button>
+            <button id="logout-btn" class="hidden text-xs text-red-200 hover:underline ml-1 font-bold">Logout</button>
           </div>
         </div>
       </div>
@@ -77,11 +75,11 @@
     <!-- NAVIGATION BAR -->
     <nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
       <div class="max-w-7xl mx-auto px-2 sm:px-4">
-        <div
-          class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
+        <div class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
           <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../home.html">HOME</a>
           <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../categories.html">CATEGORIES</a>
-          <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../save recipes.html">SAVE/POST RECIPE</a>
+          <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../save recipes.html">SAVE/POST
+            RECIPE</a>
           <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../about.html">ABOUT US</a>
         </div>
       </div>
@@ -97,8 +95,7 @@
       <!-- Recipe Image Display Container -->
       <div
         class="relative w-full h-80 sm:h-96 border-2 border-black rounded-3xl bg-black flex flex-col items-center justify-center overflow-hidden shadow-sm">
-        <img src="../../image/palabok.jpg"
-          alt="Pancit Palabok" class="w-full h-full object-cover"
+        <img src="../../image/palabok.jpg" alt="Pancit Palabok" class="w-full h-full object-cover"
           onerror="this.src='https://placehold.co/600x400/8B4513/FFF?text=Pancit+Palabok'">
       </div>
 
@@ -113,9 +110,10 @@
       <!-- Action Controls Row: Heart Toggle & Reviews Button -->
       <div class="grid grid-cols-12 gap-3 items-center">
         <div class="col-span-2 flex justify-center">
-          <button id="btn-favorite" class="heart-btn text-2xl text-black hover:scale-110 transition-transform" aria-label="Favorite Recipe">
-    <i class="fa-regular fa-heart"></i>
-</button>
+          <button id="btn-favorite" class="heart-btn text-2xl text-black hover:scale-110 transition-transform"
+            aria-label="Favorite Recipe">
+            <i class="fa-regular fa-heart"></i>
+          </button>
         </div>
         <div class="col-span-10">
           <button onclick="openReviewModal()"
@@ -130,20 +128,20 @@
     <div class="lg:col-span-7 flex flex-col gap-4">
 
       <!-- 1. Cultural Tagging / Description Card -->
-      <div
-        class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[130px] shadow-sm">
+      <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[130px] shadow-sm">
         <div
           class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
           <i class="fa-solid fa-globe text-xs"></i> Chinese-Filipino Cuisine
         </div>
         <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed uppercase">
-          • PANCIT PALABOK IS A CELEBRATED FILIPINO NOODLE DISH TOPPED WITH A RICH, SAVORY SHRIMP GRAVY, CRUNCHY CHICHARRON, SMOKED FISH FLAKES, HARD-BOILED EGGS, AND FRESH SCALLIONS. IT IS A FIXTURE AT EVERY FILIPINO GATHERING, KNOWN FOR ITS VIBRANT ORANGE HUE AND HARMONIOUS BLEND OF SEAFOOD FLAVORS.
+          • PANCIT PALABOK IS A CELEBRATED FILIPINO NOODLE DISH TOPPED WITH A RICH, SAVORY SHRIMP GRAVY, CRUNCHY
+          CHICHARRON, SMOKED FISH FLAKES, HARD-BOILED EGGS, AND FRESH SCALLIONS. IT IS A FIXTURE AT EVERY FILIPINO
+          GATHERING, KNOWN FOR ITS VIBRANT ORANGE HUE AND HARMONIOUS BLEND OF SEAFOOD FLAVORS.
         </div>
       </div>
 
       <!-- 2. Ingredients Card -->
-      <div
-        class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+      <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
         <div
           class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
           <i class="fa-solid fa-carrot text-xs"></i> INGREDIENTS
@@ -170,21 +168,23 @@
       </div>
 
       <!-- 3. Step by Step Instructions Card -->
-      <div
-        class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+      <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
         <div
           class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
           <i class="fa-solid fa-list-check text-xs"></i> STEP BY STEP
         </div>
         <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed uppercase">
           <ul class="list-disc list-inside space-y-1">
-            <li>COOK THE PALABOK NOODLES ACCORDING TO PACKAGE INSTRUCTIONS, THEN DRAIN AND SET ASIDE ON A SERVING PLATTER.</li>
+            <li>COOK THE PALABOK NOODLES ACCORDING TO PACKAGE INSTRUCTIONS, THEN DRAIN AND SET ASIDE ON A SERVING
+              PLATTER.</li>
             <li>SAUTÉ MINCED GARLIC AND ONIONS IN ANNATO OIL UNTIL FRAGRANT.</li>
             <li>ADD THE PEELED SHRIMP AND COOK BRIEFLY, THEN REMOVE AND SET ASIDE FOR TOPPING.</li>
             <li>POUR SHRIMP BROTH INTO THE PAN AND BRING TO A GENTLE SIMMER.</li>
-            <li>WHISK ALL-PURPOSE FLOUR WITH A LITTLE WATER TO CREATE A SLURRY, THEN STIR INTO THE BROTH TO THICKEN INTO A RICH SAUCE. SEASON WITH FISH SAUCE.</li>
+            <li>WHISK ALL-PURPOSE FLOUR WITH A LITTLE WATER TO CREATE A SLURRY, THEN STIR INTO THE BROTH TO THICKEN INTO
+              A RICH SAUCE. SEASON WITH FISH SAUCE.</li>
             <li>LADLE THE HOT ORANGE SHRIMP GRAVY GENEROUSLY OVER THE PREPARED NOODLES.</li>
-            <li>GARNISH WITH COOKED SHRIMP, TINAPA FLAKES, CRUSHED CHICHARRON, HARD-BOILED EGGS, FRIED GARLIC, AND SPRING ONIONS.</li>
+            <li>GARNISH WITH COOKED SHRIMP, TINAPA FLAKES, CRUSHED CHICHARRON, HARD-BOILED EGGS, FRIED GARLIC, AND
+              SPRING ONIONS.</li>
             <li>SERVE HOT WITH CALAMANSI HALVES ON THE SIDE.</li>
           </ul>
         </div>
@@ -240,7 +240,8 @@
         <div class="mt-4 font-marker text-xs sm:text-sm text-black space-y-2 leading-relaxed uppercase">
           <p class="font-bold">• ARVIN JOSH TABINAS</p>
           <p class="pl-4 text-black/90 font-['Georgia'] tracking-normal lowercase text-sm sm:text-base">
-            - "Sobrang linamnam nung sarsa at sakto ang timpla ng tinapa at chicharrón! 🤤 Parang gawa ng paborito naming kainan sa kanto. Solid na solid ang lasa!"
+            - "Sobrang linamnam nung sarsa at sakto ang timpla ng tinapa at chicharrón! 🤤 Parang gawa ng paborito
+            naming kainan sa kanto. Solid na solid ang lasa!"
           </p>
         </div>
       </div>
@@ -248,7 +249,7 @@
     </div>
 
   </main>
-  
+
   <!-- LOGIN MODAL OVERLAY -->
   <div id="login-modal-overlay" class="modal-overlay hidden">
     <div class="login-card-container">
@@ -264,8 +265,7 @@
       <div class="login-body">
         <form id="auth-form">
           <div id="signup-extra-fields" class="hidden">
-            <input type="text" id="full-name-input" class="form-input" placeholder="Full Name"
-              autocomplete="name">
+            <input type="text" id="full-name-input" class="form-input" placeholder="Full Name" autocomplete="name">
           </div>
 
           <input type="email" id="email-input" class="form-input" placeholder="Email Address" required
@@ -297,42 +297,50 @@
 
   <!-- REVIEW MODAL OVERLAY -->
   <div id="review-modal-overlay" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
-    <div class="bg-[#F7F2B7] border-2 border-black rounded-3xl p-6 max-w-2xl w-full relative shadow-xl max-h-[90vh] overflow-y-auto">
-      
+    <div
+      class="bg-[#F7F2B7] border-2 border-black rounded-3xl p-6 max-w-2xl w-full relative shadow-xl max-h-[90vh] overflow-y-auto">
+
       <!-- Close Button -->
-      <button onclick="closeReviewModal()" class="absolute top-4 right-4 text-black font-bold text-xl hover:text-red-600">&times;</button>
+      <button onclick="closeReviewModal()"
+        class="absolute top-4 right-4 text-black font-bold text-xl hover:text-red-600">&times;</button>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
+
         <!-- LEFT COLUMN: Image, Title & Comment Box -->
         <div class="flex flex-col gap-4">
           <div class="relative w-full h-48 border-2 border-black rounded-2xl bg-black overflow-hidden shadow-sm">
-            <img src="../../image/palabok.jpg"
-              alt="Pancit Palabok" class="w-full h-full object-cover">
+            <img src="../../image/palabok.jpg" alt="Pancit Palabok" class="w-full h-full object-cover">
           </div>
-          
-          <div class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-2 font-['Permanent_Marker'] text-base text-black text-center uppercase shadow-sm">
+
+          <div
+            class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-2 font-['Permanent_Marker'] text-base text-black text-center uppercase shadow-sm">
             PANCIT PALABOK
           </div>
 
           <div class="flex flex-col">
-            <div class="bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-t-xl font-['Permanent_Marker'] text-sm text-black inline-block w-fit">
+            <div
+              class="bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-t-xl font-['Permanent_Marker'] text-sm text-black inline-block w-fit">
               COMMENT:
             </div>
-            <textarea id="review-comment" class="w-full h-32 bg-[#C5BE53] border-2 border-t-0 border-black rounded-b-xl p-3 font-['Permanent_Marker'] text-sm text-black focus:outline-none resize-none uppercase" placeholder="Write your comment here..."></textarea>
+            <textarea id="review-comment"
+              class="w-full h-32 bg-[#C5BE53] border-2 border-t-0 border-black rounded-b-xl p-3 font-['Permanent_Marker'] text-sm text-black focus:outline-none resize-none uppercase"
+              placeholder="Write your comment here..."></textarea>
           </div>
         </div>
 
         <!-- RIGHT COLUMN: Rating Categories -->
         <div class="flex flex-col justify-between gap-3 font-['Permanent_Marker'] text-xs text-black">
-          
+
           <!-- Category 1 -->
           <div class="flex flex-col gap-1">
-            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU RATE THE TASTE OF THE DISH?</div>
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU
+              RATE THE TASTE OF THE DISH?</div>
             <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
               <span class="text-[10px]">VERY POOR</span>
               <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="taste">
-                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i>
               </div>
               <span class="text-[10px]">EXCELLENT</span>
             </div>
@@ -340,11 +348,14 @@
 
           <!-- Category 2 -->
           <div class="flex flex-col gap-1">
-            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU RATE THE APPEARANCE/PRESENTATION?</div>
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU
+              RATE THE APPEARANCE/PRESENTATION?</div>
             <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
               <span class="text-[10px]">VERY POOR</span>
               <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="appearance">
-                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i>
               </div>
               <span class="text-[10px]">EXCELLENT</span>
             </div>
@@ -352,11 +363,14 @@
 
           <!-- Category 3 -->
           <div class="flex flex-col gap-1">
-            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW EASY WAS THE RECIPE TO FOLLOW?</div>
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW EASY WAS
+              THE RECIPE TO FOLLOW?</div>
             <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
               <span class="text-[10px]">VERY POOR</span>
               <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="ease">
-                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i>
               </div>
               <span class="text-[10px]">EXCELLENT</span>
             </div>
@@ -364,11 +378,15 @@
 
           <!-- Category 4 -->
           <div class="flex flex-col gap-1">
-            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW SATISFIED ARE YOU WITH THE INGREDIENTS?</div>
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW SATISFIED
+              ARE YOU WITH THE INGREDIENTS?</div>
             <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
               <span class="text-[10px]">VERY POOR</span>
-              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="ingredients">
-                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+              <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer"
+                data-category="ingredients">
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i>
               </div>
               <span class="text-[10px]">EXCELLENT</span>
             </div>
@@ -376,11 +394,14 @@
 
           <!-- Category 5 -->
           <div class="flex flex-col gap-1">
-            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW LIKELY ARE YOU TO MAKE THIS RECIPE AGAIN?</div>
+            <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW LIKELY ARE
+              YOU TO MAKE THIS RECIPE AGAIN?</div>
             <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
               <span class="text-[10px]">VERY POOR</span>
               <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="repeat">
-                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
+                <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i
+                  class="fa-regular fa-star text-black/60"></i>
               </div>
               <span class="text-[10px]">EXCELLENT</span>
             </div>
@@ -392,7 +413,8 @@
 
       <!-- BOTTOM ROW: Total Score & Submit Button -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-4 border-t-2 border-black/20">
-        <div class="flex items-center gap-3 bg-[#C5BE53] border-2 border-black px-4 py-2 rounded-xl font-['Permanent_Marker'] text-sm text-black">
+        <div
+          class="flex items-center gap-3 bg-[#C5BE53] border-2 border-black px-4 py-2 rounded-xl font-['Permanent_Marker'] text-sm text-black">
           <span>TOTAL</span>
           <div id="total-stars" class="flex gap-1 text-xl text-yellow-500">
             <i class="fa-regular fa-star text-black/60"></i>
@@ -403,7 +425,8 @@
           </div>
         </div>
 
-        <button id="post-review-btn" class="w-full sm:w-auto bg-[#C5BE53] hover:bg-[#b2aa45] border-2 border-red-500 text-black px-8 py-2 rounded-xl font-['Permanent_Marker'] text-base tracking-wide shadow-sm transition-colors">
+        <button id="post-review-btn"
+          class="w-full sm:w-auto bg-[#C5BE53] hover:bg-[#b2aa45] border-2 border-red-500 text-black px-8 py-2 rounded-xl font-['Permanent_Marker'] text-base tracking-wide shadow-sm transition-colors">
           POST REVIEW
         </button>
       </div>
@@ -416,14 +439,14 @@
     <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
   </footer>
 
-<script type="module">
-  import { initAuth } from "../../js/auth.js";
-  document.addEventListener("DOMContentLoaded", () => {
-    initAuth();
-  });
-</script>
-<script src="../../js/home.js"></script>
-<script src="../../js/review.js"></script>
+  <script type="module">
+    import { initAuth } from "../../js/auth.js";
+    document.addEventListener("DOMContentLoaded", () => {
+      initAuth();
+    });
+  </script>
+  <script src="../../js/home.js"></script>
+  <script src="../../js/review.js"></script>
 </body>
 
 </html>

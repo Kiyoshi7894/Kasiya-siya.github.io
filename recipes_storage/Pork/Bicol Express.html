@@ -80,9 +80,12 @@
                 <div
                     class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
                     <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../home.html">HOME</a>
-                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../categories.html">CATEGORIES</a>
-                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer"href="../../save recipes.html">SAVE/POST RECIPE</a>
-                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../about.html">ABOUT US</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer"
+                        href="../../categories.html">CATEGORIES</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer"
+                        href="../../save recipes.html">SAVE/POST RECIPE</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="../../about.html">ABOUT
+                        US</a>
                 </div>
             </div>
         </nav>
@@ -97,8 +100,7 @@
             <!-- Recipe Image Display Container -->
             <div
                 class="relative w-full h-80 sm:h-96 border-2 border-black rounded-3xl bg-black flex flex-col items-center justify-center overflow-hidden shadow-sm">
-                <img src="../../image/PorkBicolExpress.jpg"
-                    alt="Pork Bicol Express" class="w-full h-full object-cover"
+                <img src="../../image/PorkBicolExpress.jpg" alt="Pork Bicol Express" class="w-full h-full object-cover"
                     onerror="this.src='https://placehold.co/600x400/8B4513/FFF?text=Pork+Bicol+Express'">
             </div>
 
@@ -113,9 +115,10 @@
             <!-- Action Controls Row: Heart Toggle & Reviews Button -->
             <div class="grid grid-cols-12 gap-3 items-center">
                 <div class="col-span-2 flex justify-center">
-                    <button id="btn-favorite" class="heart-btn text-2xl text-black hover:scale-110 transition-transform" aria-label="Favorite Recipe">
-    <i class="fa-regular fa-heart"></i>
-</button>
+                    <button id="btn-favorite" class="heart-btn text-2xl text-black hover:scale-110 transition-transform"
+                        aria-label="Favorite Recipe">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
                 </div>
                 <div class="col-span-10">
                     <button onclick="openReviewModal()"
@@ -137,11 +140,13 @@
                     <i class="fa-solid fa-globe text-xs"></i> Bicolano-Inspired Filipino Cuisine
                 </div>
                 <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed uppercase">
-                    • BICOL EXPRESS IS A CLASSIC FILIPINO STEW MADE WITH TENDER BITES OF PORK BELLY SIMMERED IN COCONUT MILK (GATA) AND COCONUT CREAM (KAKANG GATA), 
-                      HEAVILY SEASONED WITH FERMENTED SHRIMP PASTE (BAGOONG ALAMANG), GARLIC, ONIONS, AND GENEROUS AMOUNTS OF CHILI PEPPERS.
-                      KNOWN FOR ITS DISTINCT BALANCE OF RICH COCONUT CREAMINESS, DEEP UMAMI SALTINESS, AND FIERY HEAT, 
-                      IT PAYS HOMAGE TO THE CHILI-AND-COCONUT-CENTRIC CULINARY TRADITION OF THE BICOL REGION.
-                  
+                    • BICOL EXPRESS IS A CLASSIC FILIPINO STEW MADE WITH TENDER BITES OF PORK BELLY SIMMERED IN COCONUT
+                    MILK (GATA) AND COCONUT CREAM (KAKANG GATA),
+                    HEAVILY SEASONED WITH FERMENTED SHRIMP PASTE (BAGOONG ALAMANG), GARLIC, ONIONS, AND GENEROUS AMOUNTS
+                    OF CHILI PEPPERS.
+                    KNOWN FOR ITS DISTINCT BALANCE OF RICH COCONUT CREAMINESS, DEEP UMAMI SALTINESS, AND FIERY HEAT,
+                    IT PAYS HOMAGE TO THE CHILI-AND-COCONUT-CENTRIC CULINARY TRADITION OF THE BICOL REGION.
+
                 </div>
             </div>
 
@@ -164,7 +169,7 @@
                             <li>1 CUP COCONUT CREAM (KAKANG GATA)</li>
                         </ul>
                         <ul class="list-disc list-inside space-y-1">
-                             <li>3 TO 4 TBSP FERMENTED SHRIMP PASTE (BAGOONG ALAMANG)</li>
+                            <li>3 TO 4 TBSP FERMENTED SHRIMP PASTE (BAGOONG ALAMANG)</li>
                             <li>6 TO 8 FINGER CHILIES (SILING HABA)</li>
                             <li>3 TO 5 (SILING LABUYO / RED CHILIES), CHOPPED</li>
                             <li>1 TBSP COOKING OIL</li>
@@ -173,29 +178,31 @@
                     </div>
                 </div>
             </div>
-            <div class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
-    <div class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
-        <i class="fa-solid fa-piggy-bank text-xs"></i> ALTERNATIVE INGREDIENTS
-    </div>
-    <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed">
-        <p class="font-bold uppercase mb-1">• BUDGET BICOL EXPRESS INGREDIENTS</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pl-2 uppercase">
-            <ul class="list-disc list-inside space-y-1">
-                <li>300G PORK MASK / MINGGAY OR KASIM CUTS</li>
-                <li>3 BLOCKS HARD TOFU (TOKWA), DICED & FRIED</li>
-                <li>1 CAN (400ML) COCONUT MILK (GATA)</li>
-                <li>2 TABLESPOONS SAUTÉED ALAMANG (SHRIMP PASTE)</li>
-            </ul>
-            <ul class="list-disc list-inside space-y-1">
-                <li>6-8 PCS GREEN CHILI (SILING HABA), SLICED</li>
-                <li>3-5 PCS RED CHILI (SILING LABUYO), CHOPPED</li>
-                <li>1 MEDIUM RED ONION & 4 CLOVES GARLIC, MINCED</li>
-                <li>1 THUMB-SIZED GINGER, MINCED</li>
-                <li>1 TABLESPOON COOKING OIL</li>
-            </ul>
-        </div>
-    </div>
-</div>
+            <div
+                class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
+                <div
+                    class="badge-title absolute -top-3 left-4 bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-lg font-['Permanent_Marker'] text-sm sm:text-base flex items-center gap-2">
+                    <i class="fa-solid fa-piggy-bank text-xs"></i> ALTERNATIVE INGREDIENTS
+                </div>
+                <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed">
+                    <p class="font-bold uppercase mb-1">• BUDGET BICOL EXPRESS INGREDIENTS</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pl-2 uppercase">
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>300G PORK MASK / MINGGAY OR KASIM CUTS</li>
+                            <li>3 BLOCKS HARD TOFU (TOKWA), DICED & FRIED</li>
+                            <li>1 CAN (400ML) COCONUT MILK (GATA)</li>
+                            <li>2 TABLESPOONS SAUTÉED ALAMANG (SHRIMP PASTE)</li>
+                        </ul>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>6-8 PCS GREEN CHILI (SILING HABA), SLICED</li>
+                            <li>3-5 PCS RED CHILI (SILING LABUYO), CHOPPED</li>
+                            <li>1 MEDIUM RED ONION & 4 CLOVES GARLIC, MINCED</li>
+                            <li>1 THUMB-SIZED GINGER, MINCED</li>
+                            <li>1 TABLESPOON COOKING OIL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <!-- 3. Step by Step Instructions Card -->
             <div
                 class="card-input-box border-2 border-black rounded-xl bg-[#fffef0] p-4 relative min-h-[160px] shadow-sm">
@@ -205,14 +212,18 @@
                 </div>
                 <div class="mt-4 font-['Permanent_Marker'] text-xs sm:text-sm text-black leading-relaxed uppercase">
                     <ul class="list-disc list-inside space-y-1">
-                        <li>SLICE GREEN FINGER CHILIES AND RED BIRD'S EYE CHILIES, DESEEDING THE GREEN ONES IF YOU PREFER LESS HEAT.</li>
+                        <li>SLICE GREEN FINGER CHILIES AND RED BIRD'S EYE CHILIES, DESEEDING THE GREEN ONES IF YOU
+                            PREFER LESS HEAT.</li>
                         <li>HEAT OIL IN A WOK, ADD PORK BELLY CUBES, AND RENDER UNTIL LIGHT GOLDEN BROWN.</li>
-                        <li>PUSH PORK ASIDE, SAUTÉ GARLIC, ONION, AND GINGER UNTIL SOFT, 
-                          THEN STIR-FRY SHRIMP PASTE UNTIL FRAGRANT.</li>
+                        <li>PUSH PORK ASIDE, SAUTÉ GARLIC, ONION, AND GINGER UNTIL SOFT,
+                            THEN STIR-FRY SHRIMP PASTE UNTIL FRAGRANT.</li>
                         <li>POUR IN COCONUT MILK, COVER, AND SIMMER FOR 20 TO 25 MINUTES UNTIL THE PORK IS TENDER.</li>
-                        <li>STIR IN SLICED FINGER CHILIES AND BIRD'S EYE CHILIES TO DISTRIBUTE HEAT THROUGHOUT THE SAUCE.</li>
-                        <li>THICKEN WITH COCONUT CREAM, POUR IN COCONUT CREAM AND SIMMER UNCOVERED OVER LOW HEAT UNTIL THE SAUCE THICKENS AND RENDERS OIL.</li>
-                        <li>ADJUST SEASONING WITH SALT, PEPPER, OR SHRIMP PASTE TO TASTE, THEN SERVE HOT OVER STEAMED WHITE RICE.</li>
+                        <li>STIR IN SLICED FINGER CHILIES AND BIRD'S EYE CHILIES TO DISTRIBUTE HEAT THROUGHOUT THE
+                            SAUCE.</li>
+                        <li>THICKEN WITH COCONUT CREAM, POUR IN COCONUT CREAM AND SIMMER UNCOVERED OVER LOW HEAT UNTIL
+                            THE SAUCE THICKENS AND RENDERS OIL.</li>
+                        <li>ADJUST SEASONING WITH SALT, PEPPER, OR SHRIMP PASTE TO TASTE, THEN SERVE HOT OVER STEAMED
+                            WHITE RICE.</li>
                         <li>SERVE HOT WITH STEAMED RICE.</li>
                     </ul>
                 </div>
@@ -272,9 +283,9 @@
                         at suka. Yung sabay niya, talagang nakaka-extra rice! 🍚❤️ Parang lutong bahay na pang-araw-araw
                         pero hindi nakakasawa. Solid na solid, siguradong uulitin ko 'to!"
                     </p>
-            </div>
+                </div>
 
-        </div>
+            </div>
 
         </div>
 
@@ -324,133 +335,177 @@
         </div>
     </div>
     <!-- REVIEW MODAL OVERLAY -->
-<div id="review-modal-overlay" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
-    <div class="bg-[#F7F2B7] border-2 border-black rounded-3xl p-6 max-w-2xl w-full relative shadow-xl max-h-[90vh] overflow-y-auto">
-        
-        <!-- Close Button -->
-        <button onclick="closeReviewModal()" class="absolute top-4 right-4 text-black font-bold text-xl hover:text-red-600">&times;</button>
+    <div id="review-modal-overlay" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
+        <div
+            class="bg-[#F7F2B7] border-2 border-black rounded-3xl p-6 max-w-2xl w-full relative shadow-xl max-h-[90vh] overflow-y-auto">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- LEFT COLUMN: Image, Title & Comment Box -->
-            <div class="flex flex-col gap-4">
-                <div class="relative w-full h-48 border-2 border-black rounded-2xl bg-black overflow-hidden shadow-sm">
-                    <img src="../../image/PorkBicolExpress.jpg"
-                        alt="Pork Adobo" class="w-full h-full object-cover">
-                </div>
-                
-                <div class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-2 font-['Permanent_Marker'] text-base text-black text-center uppercase shadow-sm">
-                    PORK ADOBO
-                </div>
+            <!-- Close Button -->
+            <button onclick="closeReviewModal()"
+                class="absolute top-4 right-4 text-black font-bold text-xl hover:text-red-600">&times;</button>
 
-                <div class="flex flex-col">
-                    <div class="bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-t-xl font-['Permanent_Marker'] text-sm text-black inline-block w-fit">
-                        COMMENT:
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- LEFT COLUMN: Image, Title & Comment Box -->
+                <div class="flex flex-col gap-4">
+                    <div
+                        class="relative w-full h-48 border-2 border-black rounded-2xl bg-black overflow-hidden shadow-sm">
+                        <img src="../../image/PorkBicolExpress.jpg" alt="Pork Adobo" class="w-full h-full object-cover">
                     </div>
-                    <textarea id="review-comment" class="w-full h-32 bg-[#C5BE53] border-2 border-t-0 border-black rounded-b-xl p-3 font-['Permanent_Marker'] text-sm text-black focus:outline-none resize-none uppercase" placeholder="Write your comment here..."></textarea>
+
+                    <div
+                        class="w-full bg-[#C5BE53] border-2 border-black rounded-xl py-2 font-['Permanent_Marker'] text-base text-black text-center uppercase shadow-sm">
+                        PORK ADOBO
+                    </div>
+
+                    <div class="flex flex-col">
+                        <div
+                            class="bg-[#C5BE53] border-2 border-black px-4 py-1 rounded-t-xl font-['Permanent_Marker'] text-sm text-black inline-block w-fit">
+                            COMMENT:
+                        </div>
+                        <textarea id="review-comment"
+                            class="w-full h-32 bg-[#C5BE53] border-2 border-t-0 border-black rounded-b-xl p-3 font-['Permanent_Marker'] text-sm text-black focus:outline-none resize-none uppercase"
+                            placeholder="Write your comment here..."></textarea>
+                    </div>
                 </div>
+
+                <!-- RIGHT COLUMN: Rating Categories -->
+                <div class="flex flex-col justify-between gap-3 font-['Permanent_Marker'] text-xs text-black">
+
+                    <!-- Category 1 -->
+                    <div class="flex flex-col gap-1">
+                        <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW
+                            WOULD YOU RATE THE TASTE OF THE DISH?</div>
+                        <div
+                            class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+                            <span class="text-[10px]">VERY POOR</span>
+                            <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer"
+                                data-category="taste">
+                                <i class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i>
+                            </div>
+                            <span class="text-[10px]">EXCELLENT</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="flex flex-col gap-1">
+                        <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW
+                            WOULD YOU RATE THE APPEARANCE/PRESENTATION?</div>
+                        <div
+                            class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+                            <span class="text-[10px]">VERY POOR</span>
+                            <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer"
+                                data-category="appearance">
+                                <i class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i>
+                            </div>
+                            <span class="text-[10px]">EXCELLENT</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="flex flex-col gap-1">
+                        <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW
+                            EASY WAS THE RECIPE TO FOLLOW?</div>
+                        <div
+                            class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+                            <span class="text-[10px]">VERY POOR</span>
+                            <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer"
+                                data-category="ease">
+                                <i class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i>
+                            </div>
+                            <span class="text-[10px]">EXCELLENT</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="flex flex-col gap-1">
+                        <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW
+                            SATISFIED ARE YOU WITH THE INGREDIENTS?</div>
+                        <div
+                            class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+                            <span class="text-[10px]">VERY POOR</span>
+                            <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer"
+                                data-category="ingredients">
+                                <i class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i>
+                            </div>
+                            <span class="text-[10px]">EXCELLENT</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 5 -->
+                    <div class="flex flex-col gap-1">
+                        <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW
+                            LIKELY ARE YOU TO MAKE THIS RECIPE AGAIN?</div>
+                        <div
+                            class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
+                            <span class="text-[10px]">VERY POOR</span>
+                            <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer"
+                                data-category="repeat">
+                                <i class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i><i
+                                    class="fa-regular fa-star text-black/60"></i>
+                            </div>
+                            <span class="text-[10px]">EXCELLENT</span>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- RIGHT COLUMN: Rating Categories -->
-            <div class="flex flex-col justify-between gap-3 font-['Permanent_Marker'] text-xs text-black">
-                
-                <!-- Category 1 -->
-                <div class="flex flex-col gap-1">
-                    <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU RATE THE TASTE OF THE DISH?</div>
-                    <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
-                        <span class="text-[10px]">VERY POOR</span>
-                        <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="taste">
-                            <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
-                        </div>
-                        <span class="text-[10px]">EXCELLENT</span>
+            <!-- BOTTOM ROW: Total Score & Submit Button -->
+            <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-4 border-t-2 border-black/20">
+                <div
+                    class="flex items-center gap-3 bg-[#C5BE53] border-2 border-black px-4 py-2 rounded-xl font-['Permanent_Marker'] text-sm text-black">
+                    <span>TOTAL</span>
+                    <div id="total-stars" class="flex gap-1 text-xl text-yellow-500">
+                        <i class="fa-regular fa-star text-black/60"></i>
+                        <i class="fa-regular fa-star text-black/60"></i>
+                        <i class="fa-regular fa-star text-black/60"></i>
+                        <i class="fa-regular fa-star text-black/60"></i>
+                        <i class="fa-regular fa-star text-black/60"></i>
                     </div>
                 </div>
 
-                <!-- Category 2 -->
-                <div class="flex flex-col gap-1">
-                    <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW WOULD YOU RATE THE APPEARANCE/PRESENTATION?</div>
-                    <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
-                        <span class="text-[10px]">VERY POOR</span>
-                        <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="appearance">
-                            <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
-                        </div>
-                        <span class="text-[10px]">EXCELLENT</span>
-                    </div>
-                </div>
-
-                <!-- Category 3 -->
-                <div class="flex flex-col gap-1">
-                    <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW EASY WAS THE RECIPE TO FOLLOW?</div>
-                    <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
-                        <span class="text-[10px]">VERY POOR</span>
-                        <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="ease">
-                            <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
-                        </div>
-                        <span class="text-[10px]">EXCELLENT</span>
-                    </div>
-                </div>
-
-                <!-- Category 4 -->
-                <div class="flex flex-col gap-1">
-                    <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW SATISFIED ARE YOU WITH THE INGREDIENTS?</div>
-                    <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
-                        <span class="text-[10px]">VERY POOR</span>
-                        <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="ingredients">
-                            <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
-                        </div>
-                        <span class="text-[10px]">EXCELLENT</span>
-                    </div>
-                </div>
-
-                <!-- Category 5 -->
-                <div class="flex flex-col gap-1">
-                    <div class="bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1.5 text-center shadow-sm">HOW LIKELY ARE YOU TO MAKE THIS RECIPE AGAIN?</div>
-                    <div class="flex items-center justify-between bg-[#C5BE53] border-2 border-black rounded-lg px-3 py-1">
-                        <span class="text-[10px]">VERY POOR</span>
-                        <div class="category-rating flex gap-1 text-lg text-yellow-500 cursor-pointer" data-category="repeat">
-                            <i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i><i class="fa-regular fa-star text-black/60"></i>
-                        </div>
-                        <span class="text-[10px]">EXCELLENT</span>
-                    </div>
-                </div>
-
+                <button id="post-review-btn"
+                    class="w-full sm:w-auto bg-[#C5BE53] hover:bg-[#b2aa45] border-2 border-red-500 text-black px-8 py-2 rounded-xl font-['Permanent_Marker'] text-base tracking-wide shadow-sm transition-colors">
+                    POST REVIEW
+                </button>
             </div>
 
         </div>
-
-        <!-- BOTTOM ROW: Total Score & Submit Button -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-4 border-t-2 border-black/20">
-            <div class="flex items-center gap-3 bg-[#C5BE53] border-2 border-black px-4 py-2 rounded-xl font-['Permanent_Marker'] text-sm text-black">
-                <span>TOTAL</span>
-                <div id="total-stars" class="flex gap-1 text-xl text-yellow-500">
-                    <i class="fa-regular fa-star text-black/60"></i>
-                    <i class="fa-regular fa-star text-black/60"></i>
-                    <i class="fa-regular fa-star text-black/60"></i>
-                    <i class="fa-regular fa-star text-black/60"></i>
-                    <i class="fa-regular fa-star text-black/60"></i>
-                </div>
-            </div>
-
-            <button id="post-review-btn" class="w-full sm:w-auto bg-[#C5BE53] hover:bg-[#b2aa45] border-2 border-red-500 text-black px-8 py-2 rounded-xl font-['Permanent_Marker'] text-base tracking-wide shadow-sm transition-colors">
-                POST REVIEW
-            </button>
-        </div>
-
     </div>
-</div>
     <!-- FOOTER -->
     <footer class="bg-[#C5BE53] py-4 text-center border-t border-black/20">
         <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
     </footer>
 
-<script type="module">
-    import { initAuth } from "../../js/auth.js";
-    document.addEventListener("DOMContentLoaded", () => {
-        initAuth();
-    });
-</script>
-<script src="../../js/home.js"></script>
-<script src="../../js/review.js"></script>
+    <script type="module">
+        import { initAuth } from "../../js/auth.js";
+        document.addEventListener("DOMContentLoaded", () => {
+            initAuth();
+        });
+    </script>
+    <script src="../../js/home.js"></script>
+    <script src="../../js/review.js"></script>
 </body>
 
 </html>
