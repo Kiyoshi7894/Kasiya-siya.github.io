@@ -84,15 +84,31 @@ export function initAuth() {
     if (authForm) {
         authForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            const email = emailInput.value.trim();
+            const userInput = emailInput ? emailInput.value.trim() : "";
+            
+            // Optional password input check if you have a password field in your modal form
+            const passwordInput = document.getElementById("password-input");
+            const passInput = passwordInput ? passwordInput.value.trim() : "user123";
 
             if (isLoginMode) {
-                const username = email.split("@")[0];
-                localStorage.setItem("currentUser", username);
-                alert(`Welcome back, ${username}!`);
+                // Hardcoded login validation for user / user123
+                if (userInput === "user123@gmail.com" && passInput === "user123") {
+                    localStorage.setItem("currentUser", "user");
+                    alert("Welcome back, user!");
+                } else {
+                    alert("Invalid credentials!\nDemo Login: user123@gmail.com / user123");
+                    return; // Stop execution if login fails
+                }
             } else {
+                // Signup mode logic
                 const fullNameElement = document.getElementById("full-name-input");
-                const fullName = (fullNameElement ? fullNameElement.value.trim() : "") || email.split("@")[0];
+                const fullName = (fullNameElement ? fullNameElement.value.trim() : "") || userInput.split("@")[0];
+                
+                if (!userInput) {
+                    alert("Please enter a valid username or email.");
+                    return;
+                }
+
                 localStorage.setItem("currentUser", fullName);
                 alert(`Account created! Welcome, ${fullName}.`);
             }

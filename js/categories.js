@@ -1,11 +1,4 @@
-// categories.js
-import { initAuth } from "./auth.js";
-
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Authentication & Login Module
-  initAuth();
-
-  // Select all grid container divs inside category sections
+ // Select all grid container divs inside category sections
   const categoryGrids = document.querySelectorAll(".category-section > div:nth-child(2)");
 
   categoryGrids.forEach((grid) => {
@@ -48,4 +41,3 @@ document.addEventListener("DOMContentLoaded", () => {
       grid.scrollLeft = scrollLeft - walk;
     });
   });
-});
