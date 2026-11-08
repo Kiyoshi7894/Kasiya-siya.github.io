@@ -91,13 +91,13 @@ export function initAuth() {
             const passInput = passwordInput ? passwordInput.value.trim() : "user1234";
 
             if (isLoginMode) {
-                // Hardcoded login validation for user / user123
+                // Hardcoded login validation for user123@gmail.com / user1234
                 if (userInput === "user123@gmail.com" && passInput === "user1234") {
                     localStorage.setItem("currentUser", "user");
                     alert("Welcome back, user!");
                 } else {
                     alert("Invalid credentials!\nDemo Login: user123@gmail.com / user1234");
-                    return; // Stop execution if login fails
+                    return;
                 }
             } else {
                 // Signup mode logic
@@ -112,7 +112,7 @@ export function initAuth() {
                 const minPasswordLength = 8;
                 if (passInput.length < minPasswordLength) {
                     alert(`Password must be at least ${minPasswordLength} characters long.`);
-                    return; // Stop execution and keep the modal open
+                    return;
                 }
 
                 localStorage.setItem("currentUser", fullName);
