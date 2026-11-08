@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASIYA-SIYA - Authentic Filipino Recipes</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kalam:wght@700&family=Permanent+Marker&family=Georgia&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Flip Card Utility Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between">
+
+    <div class="wrapper flex-grow flex flex-col">
+        <!-- Top Navigation Bar Layout -->
+        <header class="top-navbar">
+            <div class="nav-left">
+                <a href="home.html" class="brand-container">
+                    <h1 class="brand-name">KASIYA-SIYA</h1>
+                    <div class="brand-boxes">
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                        <div class="square-box"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-right">
+                <img src="./image/sun.png" alt="Filipino Sun Graphic" class="sun-graphic">
+
+                <div class="flex items-center gap-1.5 sm:gap-3 z-10">
+                    <!-- Search Container -->
+                    <div class="search-container">
+                        <button class="search-btn" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass text-[10px] sm:text-xs"></i>
+                        </button>
+                        <input type="text" id="recipe-search" class="search-input" placeholder="Search..."
+                            autocomplete="off">
+                    </div>
+
+                    <!-- Login / Logout -->
+                    <div id="auth-header-btn" class="nav-auth-btn">
+                        <button id="open-login-btn" class="auth-trigger-btn">
+                            <i class="fa-solid fa-user text-[10px]"></i>
+                            <span id="user-display-name">LOGIN</span>
+                        </button>
+                        <button id="logout-btn"
+                            class="hidden text-xs text-red-200 hover:underline ml-1 font-bold">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION BAR -->
+        <nav class="bg-[#C5BE53] border-y-2 border-black sticky top-0 z-30 shadow-md">
+            <div class="max-w-7xl mx-auto px-2 sm:px-4">
+                <div
+                    class="flex items-center justify-between sm:justify-around py-2 sm:py-3 gap-1 sm:gap-6 text-center">
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="home.html">HOME</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer"
+                        href="categories.html">CATEGORIES</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="save recipes.html">SAVE/POST
+                        RECIPE</a>
+                    <a class="nav-item text-xs sm:text-xl md:text-2xl cursor-pointer" href="about.html">ABOUT
+                        US</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN ABOUT US / THE TEAM CONTENT -->
+        <main class="bg-[#FEF0B5] py-12 px-4 sm:px-6 lg:px-8 flex-grow flex flex-col justify-center">
+
+            <!-- SECTION BADGE: THE TEAM -->
+            <div class="flex justify-center mb-4">
+                <div
+                    class="team-badge px-10 py-2 text-2xl sm:text-3xl font-marker border-2 border-black rounded-full tracking-wider">
+                    Search
+                </div>
+            </div>
+                <div class="max-w-6xl mx-auto space-y-10" id="categories-container">
+                    <div class="category-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">  
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/pork-adobo.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkAdobo.jpg" alt="Pork Adobo" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PORK
+                                ADOBO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Tokwat Baboy.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/TokwatBaboy.jpg" alt="Tokwa't Baboy" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">
+                                TOKWA'T BABOY</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Pork-Sinigang.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkSinigang.jpg" alt="Pork Sinigang" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PORK
+                                SINIGANG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Sizzling Sisig.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/porkSisig.jpg" alt="Sizzling Sisig" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">SIZZLING
+                                SISIG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Pork-Humba.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkHumba.jpg" alt="Pork Humba" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PORK
+                                HUMBA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Pork Kare-Kare.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkKarekare.jpg" alt="Pork Kare-Kare" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PORK
+                                KARE-KARE</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Pork Bistek.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkBistek.jpg" alt="Pork Bistek" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PORK
+                                BISTEK</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Menudo.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/porkMenudo.jpg" alt="Menudo" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">MENUDO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Bicol Express.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkBicolExpress.jpg" alt="Bicol Express" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BICOL
+                                EXPRESS</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Pork/Batchoy Tagalog.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PorkBatchoy.jpg" alt="Batchoy Tagalog" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BATCHOY
+                                TAGALOG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Beef/Beef Pares.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/BeefPares.jpg" alt="Beef Pares" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BEEF
+                                PARES</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Beef/Beef Tapa.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/BeefTapa.jpg" alt="Beef Tapa" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BEEF
+                                TAPA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Beef/Bulalo.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/bulalo.jpg" alt="Bulalo" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BULALO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Beef/Kaldereta (Beef).html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/beefkaldereta.jpg" alt="Beef Kaldereta" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BEEF
+                                KALDERETA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Beef/NIlaga.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/beenilaga.jpg" alt="Beef Nilaga" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BEEF
+                                NILAGA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/chickenadobongputi.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/chickenAdoboPuti.jpg" alt="Chicken Adobong Puti" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHICKEN
+                                ADOBONG PUTI</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/chickenasado.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/ChickenAsado.jpg" alt="Chicken Asado" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHICKEN
+                                ASADO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/chickenbicolexpress.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/ChickenBicolExpress.jpg" alt="Chicken Bicol Express" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHICKEN
+                                BICOL EXPRESS</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/chickeninasal.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/chickenInasal.jpg" alt="Chicken Inasal" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHICKEN
+                                INASAL</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/chickenpastil.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/pastil.jpg" alt="Chicken Pastil" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHICKEN
+                                PASTIL</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/pininyahangmanok.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/PineappleChicken.jpg" alt="Pineapple Chicken" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PINEAPPLE
+                                CHICKEN</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Chicken/tinolangmanok.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/ChickenTinola.jpg" alt="Chicken Tinola" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHICKEN
+                                TINOLA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Fish/escabecheng tilapia.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/escabecheng tilapia.jpg" alt="Escabeche na Tilapia" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">ESCA BECHE NA
+                                TILAPIA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Fish/ginataang isda.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/Ginataang isda.jpg" alt="Ginataang Isda" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">GINATAANG
+                                ISDA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Fish/paksiw na dalag.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/paksiw na dalag.jpg" alt="Paksiw na Dalag" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PAKSIW NA
+                                DALAG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Fish/relyenong bangus.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/relyenong bangus.jpg" alt="Relyenong Bangus" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">RELYENONG
+                                BANGUS</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Fish/sarciadong galunggong.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/sarciadong galunggong.jpg" alt="Sarciadong Galunggong"
+                                    class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">SARCIADONG
+                                GALUNGGONG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Fish/sinaing na tulingan.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/sinaing na tulingan.jpg" alt="Sinaing na Tulingan" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">SINAING NA
+                                TULINGAN</span>
+                        </div>
+
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Vegetable/ADOBONG KANGKONG.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/kangkong.jpg" alt="Adobo Kangkong" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">ADOBONG
+                                KANGKONG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Vegetable/CHOP SUEY.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/chop.jpg" alt="Chop Suey" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">CHOP SUEY</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Vegetable/GINATAANG LANGKA.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/langka.jpg" alt="Ginataang Langka" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">GINATAANG
+                                LANGKA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Vegetable/TORTANG TALONG.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/tortang talong.jpg" alt="Tortang Talong" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">TORTANG
+                                TALONG</span>
+                        </div>
+
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/adobong sitaw.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/sitaw.jpg" alt="Adobong Sitaw" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">ADOBONG
+                                SITAW</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/ginisang ampalaya.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/ampalaya.jpg" alt="Ginisang Ampalaya" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">GINISANG
+                                AMPALAYA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/ginisang itlog with kamatis.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/kamatis.jpg" alt="Ginisang Itlog with Kamatis" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">GINISANG ITLOG
+                                WITH KAMATIS</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/ginisang monggo.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/monggo.jpg" alt="Ginisang Monggo" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">GINISANG
+                                MONGGO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/ginisang repolyo.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/repolyo.jpg" alt="Ginisang Repolyo" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">GINISANG
+                                REPOLYO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/laing.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/laing.jpg" alt="Laing" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">LAING</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Budget/pinakbet.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/pinakbet.jpg" alt="Pinakbet" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PINAKBET</span>
+                        </div>
+
+
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Regional/BINIGNIT.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/binignit.jpg" alt="Binignit" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BINIGNIT</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Regional/BURONG ISDA.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/buro.jpg" alt="Burong Isda" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BURONG
+                                ISDA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Regional/ILOCOS EMPANADA.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/empanada.jpg" alt="Ilocos Empanada" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">ILOCOS
+                                EMPANADA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Regional/TIBOK-TIBOK.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/tiboktibok.jpg" alt="Tibok-Tibok" class="dish-img">
+                            </a>
+                            <span
+                                class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">TIBOK-TIBOK</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Regional/TUPIG.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/tupig.jpg" alt="Tupig" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">SIZZLING
+                                SISIG</span>
+                        </div>
+
+
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/celebration/CrispyPata.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/crispy pata.jpg" alt="Crispy Pata" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">Crispy
+                                Pata</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/celebration/FilipinoSpaghetti.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/spaghetti.jpg" alt="Filipino Spaghetti" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">FILIPINO
+                                SPAGHETTI</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/celebration/lechon.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/lechon.jpg" alt="Lechon" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">LECHON</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/celebration/palabok.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/palabok.jpg" alt="Palabok" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PALABOK</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/celebration/Pancit.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/pancit.jpg" alt="Pancit" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PANCIT</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/celebration/shanghai.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/shanghai.jpg" alt="Shanghai" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">SHANGHAI</span>
+                        </div>
+
+
+
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Merienda/Bibingka.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/bibingka.jpg" alt="Bibingka" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">BIBINGKA</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Merienda/Halo-Halo.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/halohalo.jpg" alt="Halo-Halo" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">HALO-HALO</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Merienda/KamoteCue.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/kamote.jpg" alt="Kamote Cue" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">KAMOTE
+                                CUE</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Merienda/Lecheflan.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/leche flan.jpg" alt="Leche Flan" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">LECHE
+                                FLAN</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Merienda/putobumbong.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/puto bumbong.jpg" alt="Puto Bumbong" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">PUTO
+                                BUMBONG</span>
+                        </div>
+                        <div class="dish-card flex flex-col items-center">
+                            <a href="./recipes_storage/Merienda/Turon.html"
+                                class="dish-img-container w-full h-48 sm:h-52 overflow-hidden rounded-2xl border-2 border-black/10 shadow-md">
+                                <img src="./image/turon.jpg" alt="Turon" class="dish-img">
+                            </a>
+                            <span class="dish-title font-marker text-xl sm:text-2xl mt-3 tracking-wide">TURON</span>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <div id="login-modal-overlay" class="modal-overlay hidden">
+            <div class="login-card-container">
+                <!-- Close Button -->
+                <button id="close-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+
+                <!-- Gradient Header Banner -->
+                <div class="login-header-gradient">
+                    <h2 id="form-title">Login Form</h2>
+                </div>
+
+                <!-- Form Content -->
+                <div class="login-body">
+                    <form id="auth-form">
+                        <div id="signup-extra-fields" class="hidden">
+                            <input type="text" id="full-name-input" class="form-input" placeholder="Full Name"
+                                autocomplete="name">
+                        </div>
+
+                        <input type="email" id="email-input" class="form-input" placeholder="Email Address" required
+                            autocomplete="email">
+                        <input type="password" id="password-input" class="form-input" placeholder="Password" required
+                            autocomplete="current-password">
+
+                        <!-- Login Options (Remember Me & Forgot Password) -->
+                        <div id="login-options" class="options-bar">
+                            <label class="remember-label">
+                                <input type="checkbox" id="remember-me">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link" id="forgot-password">Forgot password?</a>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="gradient-submit-btn">Login</button>
+
+                        <!-- Auth Toggle Switch Link -->
+                        <div class="form-footer-text">
+                            <span id="toggle-prompt">Not a member?</span>
+                            <a href="#" id="toggle-auth-mode" class="signup-link">Signup now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-[#C5BE53] py-4 text-center border-t border-black/20">
+            <p class="font-marker text-sm text-black">KASIYA-SIYA FILIPINO RECIPES</p>
+        </footer>
+    </div>
+</body>
+<script type="module">
+    import { initAuth } from "./JS/auth.js";
+    document.addEventListener("DOMContentLoaded", () => {
+        initAuth();
+    });
+</script>
+<script type="module" src="js/home.js"></script>
+
+</html>
