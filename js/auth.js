@@ -88,15 +88,15 @@ export function initAuth() {
             
             // Optional password input check if you have a password field in your modal form
             const passwordInput = document.getElementById("password-input");
-            const passInput = passwordInput ? passwordInput.value.trim() : "user123";
+            const passInput = passwordInput ? passwordInput.value.trim() : "user1234";
 
             if (isLoginMode) {
                 // Hardcoded login validation for user / user123
-                if (userInput === "user123@gmail.com" && passInput === "user123") {
+                if (userInput === "user123@gmail.com" && passInput === "user1234") {
                     localStorage.setItem("currentUser", "user");
                     alert("Welcome back, user!");
                 } else {
-                    alert("Invalid credentials!\nDemo Login: user123@gmail.com / user123");
+                    alert("Invalid credentials!\nDemo Login: user123@gmail.com / user1234");
                     return; // Stop execution if login fails
                 }
             } else {
@@ -107,6 +107,12 @@ export function initAuth() {
                 if (!userInput) {
                     alert("Please enter a valid username or email.");
                     return;
+                }
+
+                const minPasswordLength = 8;
+                if (passInput.length < minPasswordLength) {
+                    alert(`Password must be at least ${minPasswordLength} characters long.`);
+                    return; // Stop execution and keep the modal open
                 }
 
                 localStorage.setItem("currentUser", fullName);
